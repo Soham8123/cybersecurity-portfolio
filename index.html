@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aria Chen // Cybersecurity Student</title>
-<meta name="description" content="Portfolio of Aria Chen, cybersecurity student — CTF writeups, security projects, and skills.">
+<title>Soham Walunj | Cybersecurity Student</title>
+<meta name="description" content="Cybersecurity student — SIEM, Cloud Security, Incident Response, Threat Detection, SOC Operations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="logo">
-      <span class="logo-bracket">[</span>root<span class="logo-at">@</span>ariachen<span class="logo-bracket">]#</span>
+      <span class="logo-bracket">[</span>root<span class="logo-at">@</span>soham<span class="logo-bracket">]#</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -27,9 +27,10 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about"><span class="idx">01</span>whoami</a></li>
       <li><a href="#skills"><span class="idx">02</span>toolkit</a></li>
-      <li><a href="#projects"><span class="idx">03</span>writeups</a></li>
+      <li><a href="#projects"><span class="idx">03</span>projects</a></li>
       <li><a href="#certs"><span class="idx">04</span>credentials</a></li>
       <li><a href="#contact"><span class="idx">05</span>connect</a></li>
+      <li><a class="nav-resume" href="Soham_Walunj_Resume.pdf" download>Resume ↓</a></li>
     </ul>
   </div>
 </nav>
@@ -46,7 +47,12 @@
         <p class="line"><span class="prompt">guest@portfolio</span><span class="colon">:</span><span class="path">~</span><span class="dollar">$</span> <span class="typed" id="typed1"></span><span class="cursor" id="cursor1">▌</span></p>
       </div>
     </div>
-    <p class="hero-caption">Undergraduate · Cybersecurity &amp; Digital Forensics · CTF player</p>
+    <h1 class="hero-name">Soham Walunj</h1>
+    <p class="hero-caption">M.Sc (CA) Cyber Security student · SIEM &amp; Cloud Security · Open to Internship Opportunities</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="Soham_Walunj_Resume.pdf" download>Download Resume</a>
+      <a class="btn btn-ghost" href="#projects">View Projects</a>
+    </div>
   </div>
   <a class="scroll-hint" href="#about">
     <span>scroll</span>
@@ -60,20 +66,37 @@
   <section class="section" id="about">
     <div class="section-inner">
       <p class="eyebrow"><span class="idx">01</span> whoami</p>
-      <h2 class="section-title">Breaking things to understand<br>how to defend them.</h2>
+      <h2 class="section-title">Learning to defend systems<br>by studying how they break.</h2>
       <div class="about-grid">
-        <p class="about-text">
-          I'm a cybersecurity student who spends more time in a terminal than a lecture hall — reversing binaries,
-          chasing misconfigurations, and writing up what I find so the next person doesn't have to start from zero.
-          My focus sits at the intersection of offensive security and digital forensics: I like knowing how a system
-          breaks well enough to explain exactly how to keep it standing.
-        </p>
-        <ul class="about-facts">
-          <li><span class="fact-label">Focus</span><span class="fact-value">Offensive Security · DFIR</span></li>
-          <li><span class="fact-label">Ranked</span><span class="fact-value">Top 8% · picoCTF 2025</span></li>
-          <li><span class="fact-label">Lab OS</span><span class="fact-value">Kali · Arch · Windows Server</span></li>
-          <li><span class="fact-label">Status</span><span class="fact-value">Open to internships</span></li>
-        </ul>
+        <div class="about-text-col">
+          <p class="about-text">
+            I'm Soham Walunj, an M.Sc. (Computer Applications) student specializing in Cyber Security at
+            Symbiosis Institute of Computer Studies and Research (SICSR), Pune. I have hands‑on experience
+            in SIEM implementation, cloud security, and security monitoring — building projects like a
+            Wazuh SIEM lab, a cloud security event dashboard on Microsoft Azure, and a rule‑based
+            authentication threat‑detection engine.
+          </p>
+          <p class="about-text">
+            Through work with Azure, Docker, FastAPI, and Python, I've developed practical skills in
+            threat detection, incident response, and cloud‑native security. I'm continuously expanding
+            that foundation through labs, certifications, and applied research — and currently open to
+            cybersecurity or SOC analyst internship opportunities.
+          </p>
+          <ul class="about-facts">
+            <li><span class="fact-label">Focus</span><span class="fact-value">SIEM • Cloud Security • Threat Detection</span></li>
+            <li><span class="fact-label">Education</span><span class="fact-value">M.Sc (CA) Cyber Security, SICSR</span></li>
+            <li><span class="fact-label">Lab OS</span><span class="fact-value">Kali Linux • Ubuntu • Windows</span></li>
+            <li><span class="fact-label">Status</span><span class="fact-value">Open for Cyber Security Internship</span></li>
+          </ul>
+        </div>
+        <div class="feed">
+          <div class="feed-frame">
+            <img src="profile.jpg" alt="Soham Walunj" class="feed-img">
+            <span class="feed-corner tl"></span><span class="feed-corner tr"></span>
+            <span class="feed-corner bl"></span><span class="feed-corner br"></span>
+            <div class="feed-tag"><span class="rec-dot"></span>OPERATOR: S.WALUNJ</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -87,51 +110,51 @@
       <div class="skills-grid">
         <div class="skill-card">
           <div class="skill-head">
-            <span class="skill-name">Network Security</span>
-            <span class="skill-level" style="--level:88%">88%</span>
-          </div>
-          <div class="skill-bar"><span style="--level:88%"></span></div>
-          <p class="skill-tools">Wireshark · Nmap · tcpdump · Zeek</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-head">
-            <span class="skill-name">Web App Pentesting</span>
-            <span class="skill-level" style="--level:82%">82%</span>
-          </div>
-          <div class="skill-bar"><span style="--level:82%"></span></div>
-          <p class="skill-tools">Burp Suite · OWASP ZAP · sqlmap</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-head">
-            <span class="skill-name">Exploitation</span>
-            <span class="skill-level" style="--level:75%">75%</span>
-          </div>
-          <div class="skill-bar"><span style="--level:75%"></span></div>
-          <p class="skill-tools">Metasploit · Pwntools · GDB/GEF</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-head">
-            <span class="skill-name">Digital Forensics</span>
-            <span class="skill-level" style="--level:79%">79%</span>
-          </div>
-          <div class="skill-bar"><span style="--level:79%"></span></div>
-          <p class="skill-tools">Autopsy · Volatility3 · FTK Imager</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-head">
-            <span class="skill-name">Scripting</span>
+            <span class="skill-name">Cybersecurity &amp; SOC</span>
             <span class="skill-level" style="--level:85%">85%</span>
           </div>
           <div class="skill-bar"><span style="--level:85%"></span></div>
-          <p class="skill-tools">Python · Bash · PowerShell</p>
+          <p class="skill-tools">Wazuh SIEM · Log Analysis · Incident Response · Threat Detection</p>
         </div>
         <div class="skill-card">
           <div class="skill-head">
-            <span class="skill-name">Cloud &amp; Systems</span>
-            <span class="skill-level" style="--level:70%">70%</span>
+            <span class="skill-name">Cloud Platforms</span>
+            <span class="skill-level" style="--level:78%">78%</span>
           </div>
-          <div class="skill-bar"><span style="--level:70%"></span></div>
-          <p class="skill-tools">AWS IAM · Linux hardening · Docker</p>
+          <div class="skill-bar"><span style="--level:78%"></span></div>
+          <p class="skill-tools">Microsoft Azure · Azure Container Registry · Firebase</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-head">
+            <span class="skill-name">Operating Systems</span>
+            <span class="skill-level" style="--level:82%">82%</span>
+          </div>
+          <div class="skill-bar"><span style="--level:82%"></span></div>
+          <p class="skill-tools">Kali Linux · Ubuntu Linux · Windows</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-head">
+            <span class="skill-name">Networking</span>
+            <span class="skill-level" style="--level:75%">75%</span>
+          </div>
+          <div class="skill-bar"><span style="--level:75%"></span></div>
+          <p class="skill-tools">TCP/IP · DNS · HTTP/HTTPS · Network Troubleshooting</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-head">
+            <span class="skill-name">Programming</span>
+            <span class="skill-level" style="--level:80%">80%</span>
+          </div>
+          <div class="skill-bar"><span style="--level:80%"></span></div>
+          <p class="skill-tools">Python · C++ · PHP</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-head">
+            <span class="skill-name">DevOps &amp; Deployment</span>
+            <span class="skill-level" style="--level:72%">72%</span>
+          </div>
+          <div class="skill-bar"><span style="--level:72%"></span></div>
+          <p class="skill-tools">Docker · Containerized Microservices · REST APIs</p>
         </div>
       </div>
     </div>
@@ -140,110 +163,126 @@
   <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="section-inner">
-      <p class="eyebrow"><span class="idx">03</span> writeups</p>
+      <p class="eyebrow"><span class="idx">03</span> projects</p>
       <h2 class="section-title">Incident log</h2>
-      <p class="section-sub">Selected projects and CTF writeups, logged like the reports I'd hand to a blue team.</p>
+      <p class="section-sub">Security-focused projects, logged like the reports I'd hand to a blue team.</p>
 
       <div class="log-list">
 
         <article class="log-entry">
           <div class="log-meta">
-            <span class="log-tag tag-critical">CTF · PWN</span>
-            <span class="log-date">Mar 2026</span>
+            <span class="log-tag tag-info">CLOUD · SIEM</span>
           </div>
-          <h3 class="log-title">Stack canary bypass in a custom CTF binary</h3>
+          <h3 class="log-title">Real-Time Cloud Security Event Dashboard</h3>
           <p class="log-desc">
-            Solved a 400-point pwn challenge by chaining a format-string leak with a ret2libc attack to defeat
-            ASLR and stack canaries on an unpatched x86-64 binary. Wrote a Python/Pwntools exploit script and
-            a full writeup covering the leak, offset calculation, and payload construction.
+            Built an end-to-end cloud SIEM dashboard on Microsoft Azure using FastAPI, real-time event
+            streaming, REST APIs, and interactive visualizations. Deployed a containerized microservices
+            architecture using Docker and Azure Container Registry (ACR) to improve deployment consistency,
+            portability, and scalability.
           </p>
           <div class="log-stack">
-            <span>Pwntools</span><span>GDB/GEF</span><span>ret2libc</span>
+            <span>FastAPI</span><span>Azure</span><span>Docker</span><span>REST APIs</span>
           </div>
-          <a href="#" class="log-link">Read writeup <span aria-hidden="true">→</span></a>
+          <a href="https://github.com/Soham8123/Security-Dashboard" class="log-link" target="_blank" rel="noopener">View repo <span aria-hidden="true">→</span></a>
         </article>
 
         <article class="log-entry">
           <div class="log-meta">
-            <span class="log-tag tag-warn">WEB APP</span>
-            <span class="log-date">Jan 2026</span>
+            <span class="log-tag tag-warn">SIEM LAB</span>
           </div>
-          <h3 class="log-title">Automated recon &amp; vuln scanner for bug bounty triage</h3>
+          <h3 class="log-title">Open-Source Wazuh SIEM Lab</h3>
           <p class="log-desc">
-            Built a Python tool that chains subdomain enumeration, port scanning, and known-CVE matching into
-            a single pipeline, cutting manual recon time on bug bounty targets from hours to minutes. Outputs
-            a prioritized findings report ranked by exploitability.
+            Designed and deployed a Wazuh-based SIEM environment comprising Wazuh Manager, Wazuh Indexer,
+            and Wazuh Dashboard for centralized security monitoring. Integrated Kali Linux endpoints with
+            Wazuh agents to enable centralized log collection, event analysis, and threat detection across
+            systems, with real-time alerting workflows for incident detection and response.
           </p>
           <div class="log-stack">
-            <span>Python</span><span>Nmap API</span><span>Shodan API</span>
+            <span>Wazuh</span><span>Kali Linux</span><span>Log Analysis</span>
           </div>
-          <a href="#" class="log-link">View repo <span aria-hidden="true">→</span></a>
+          <a href="https://github.com/Soham8123" class="log-link" target="_blank" rel="noopener">View repo <span aria-hidden="true">→</span></a>
         </article>
 
         <article class="log-entry">
           <div class="log-meta">
-            <span class="log-tag tag-info">DFIR</span>
-            <span class="log-date">Nov 2025</span>
+            <span class="log-tag tag-critical">DETECTION ENGINE</span>
           </div>
-          <h3 class="log-title">Memory forensics: reconstructing a ransomware timeline</h3>
+          <h3 class="log-title">Rule-Based Cloud Authentication Threat Detection &amp; Alerting System</h3>
           <p class="log-desc">
-            Analyzed a memory dump from a simulated ransomware infection using Volatility3, recovering the
-            malicious process tree, encryption keys held in memory, and network beacon traffic to rebuild a
-            minute-by-minute incident timeline for the case report.
+            Developed a rule-based detection engine to identify suspicious authentication activity —
+            brute-force attempts, impossible-travel events, new-country logins, and MFA failures.
+            Implemented severity-based alert generation and automated incident reporting from cloud
+            authentication logs to support efficient security monitoring.
           </p>
           <div class="log-stack">
-            <span>Volatility3</span><span>Autopsy</span><span>YARA</span>
+            <span>Python</span><span>Rule Engine</span><span>Cloud Auth Logs</span>
           </div>
-          <a href="#" class="log-link">Read report <span aria-hidden="true">→</span></a>
-        </article>
-
-        <article class="log-entry">
-          <div class="log-meta">
-            <span class="log-tag tag-info">NETWORK</span>
-            <span class="log-date">Sep 2025</span>
-          </div>
-          <h3 class="log-title">Home lab: segmented network with IDS/IPS monitoring</h3>
-          <p class="log-desc">
-            Designed and built a VLAN-segmented home lab with pfSense, a Suricata IDS/IPS instance, and a
-            Zeek sensor mirroring traffic to an ELK stack for log analysis — used it to study real attack
-            traffic against deliberately vulnerable VMs.
-          </p>
-          <div class="log-stack">
-            <span>pfSense</span><span>Suricata</span><span>ELK Stack</span>
-          </div>
-          <a href="#" class="log-link">View writeup <span aria-hidden="true">→</span></a>
+          <a href="https://github.com/Soham8123" class="log-link" target="_blank" rel="noopener">View repo <span aria-hidden="true">→</span></a>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- CERTS -->
+  <!-- EDUCATION + CERTS -->
   <section class="section section-alt" id="certs">
     <div class="section-inner">
       <p class="eyebrow"><span class="idx">04</span> credentials</p>
-      <h2 class="section-title">Certifications &amp; coursework</h2>
+      <h2 class="section-title">Education &amp; certifications</h2>
 
+      <h3 class="subhead">Education</h3>
+      <div class="edu-list">
+        <div class="edu-row">
+          <div class="edu-main">
+            <span class="edu-degree">M.Sc (CA) — Cyber Security</span>
+            <span class="edu-school">SICSR, Symbiosis International University (SIU), Pune</span>
+          </div>
+          <div class="edu-meta"><span class="edu-year">2025–2027</span><span class="edu-score">CGPA 7.19 (current)</span></div>
+        </div>
+        <div class="edu-row">
+          <div class="edu-main">
+            <span class="edu-degree">B.Sc — Computer Science</span>
+            <span class="edu-school">Nowrosjee Wadia College, Pune (SPPU)</span>
+          </div>
+          <div class="edu-meta"><span class="edu-year">2025</span><span class="edu-score">CGPA 7.15</span></div>
+        </div>
+        <div class="edu-row">
+          <div class="edu-main">
+            <span class="edu-degree">Class XII</span>
+            <span class="edu-school">Sadhu Vaswani Jr. College · Maharashtra Board</span>
+          </div>
+          <div class="edu-meta"><span class="edu-year">2022</span><span class="edu-score">69.33%</span></div>
+        </div>
+        <div class="edu-row">
+          <div class="edu-main">
+            <span class="edu-degree">Class X</span>
+            <span class="edu-school">Ryan International School, Sanpada · CBSE</span>
+          </div>
+          <div class="edu-meta"><span class="edu-year">2020</span><span class="edu-score">78.4%</span></div>
+        </div>
+      </div>
+
+      <h3 class="subhead">Certifications</h3>
       <div class="certs-grid">
         <div class="cert-card">
-          <span class="cert-status status-active">ACTIVE</span>
-          <h3>CompTIA Security+</h3>
-          <p>Foundational security controls, risk management, and incident response.</p>
+          <span class="cert-status status-active">2026</span>
+          <h3>Tata Cybersecurity Analyst Job Simulation</h3>
+          <p>Forage — applied SOC analyst tasks and threat triage workflows.</p>
         </div>
         <div class="cert-card">
-          <span class="cert-status status-active">ACTIVE</span>
-          <h3>eJPT — eLearnSecurity Junior Penetration Tester</h3>
-          <p>Hands-on penetration testing across networks and web applications.</p>
+          <span class="cert-status status-active">2026</span>
+          <h3>DPDPA, 2023 — Certificate Course &amp; Examination</h3>
+          <p>DPDPA.com — India's Digital Personal Data Protection Act.</p>
         </div>
         <div class="cert-card">
-          <span class="cert-status status-progress">IN PROGRESS</span>
-          <h3>OSCP — Offensive Security Certified Professional</h3>
-          <p>Advanced exploitation and reporting, expected completion late 2026.</p>
+          <span class="cert-status status-active">2025</span>
+          <h3>Deloitte Cyber Job Simulation</h3>
+          <p>Forage — hands-on cybersecurity consulting scenarios.</p>
         </div>
         <div class="cert-card">
-          <span class="cert-status status-active">ACTIVE</span>
-          <h3>B.Sc. Cybersecurity (in progress)</h3>
-          <p>Coursework in cryptography, network defense, and digital forensics.</p>
+          <span class="cert-status status-active">2025</span>
+          <h3>Getting Started with Artificial Intelligence</h3>
+          <p>IBM — foundations of AI concepts and applications.</p>
         </div>
       </div>
     </div>
@@ -254,24 +293,24 @@
     <div class="section-inner">
       <p class="eyebrow"><span class="idx">05</span> connect</p>
       <h2 class="section-title">Initiate handshake</h2>
-      <p class="section-sub">Recruiting for internships, CTF teams, or research collaborations? Let's talk.</p>
+      <p class="section-sub">Recruiting for internships or research collaborations? Let's talk.</p>
 
       <div class="contact-grid">
-        <a class="contact-card" href="mailto:aria.chen@example.com">
+        <a class="contact-card" href="mailto:sohamwalunj812@gmail.com">
           <span class="contact-label">Email</span>
-          <span class="contact-value">aria.chen@example.com</span>
+          <span class="contact-value">sohamwalunj812@gmail.com</span>
         </a>
-        <a class="contact-card" href="https://linkedin.com" target="_blank" rel="noopener">
+        <a class="contact-card" href="tel:+919322239554">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+91 93222 39554</span>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/in/sohamwalunj812" target="_blank" rel="noopener">
           <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">/in/ariachen</span>
+          <span class="contact-value">/in/sohamwalunj812</span>
         </a>
-        <a class="contact-card" href="https://github.com" target="_blank" rel="noopener">
+        <a class="contact-card" href="https://github.com/Soham8123" target="_blank" rel="noopener">
           <span class="contact-label">GitHub</span>
-          <span class="contact-value">@ariachen</span>
-        </a>
-        <a class="contact-card" href="https://tryhackme.com" target="_blank" rel="noopener">
-          <span class="contact-label">TryHackMe</span>
-          <span class="contact-value">ariachen</span>
+          <span class="contact-value">@Soham8123</span>
         </a>
       </div>
     </div>
@@ -280,8 +319,8 @@
 </main>
 
 <footer class="footer">
-  <p>© 2026 Aria Chen — built from scratch, deployed on Vercel.</p>
-  <p class="footer-status"><span class="dot-live"></span> connection secure</p>
+  <p>© 2026 Soham Walunj — Pune, Maharashtra.</p>
+  <p class="footer-status"><span class="dot-live"></span> monitoring active</p>
 </footer>
 
 <script src="script.js"></script>
