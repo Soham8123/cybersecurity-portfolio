@@ -1,10 +1,64 @@
-// Mobile nav toggle
+// ---------- Terminal boot sequence ----------
+const bootLines = [
+  "whoami",
+  "→ Soham Walunj — Cyber Security student, SICSR Pune",
+  "cat status.txt",
+  "→ Open for Cyber Security / SOC Analyst internships"
+];
+
+function typeLine(el, text, speed, done){
+  let i = 0;
+  const tick = () => {
+    if (i <= text.length){
+      el.textContent = text.slice(0, i);
+      i++;
+      setTimeout(tick, speed);
+    } else if (done) {
+      setTimeout(done, 700);
+    }
+  };
+  tick();
+}
+
+function runBoot(){
+  const typedEl = document.getElementById('typed1');
+  const body = document.getElementById('terminalBody');
+  if (!typedEl || !body) return;
+
+  let idx = 0;
+  const step = () => {
+    if (idx >= bootLines.length) return;
+    typeLine(typedEl, bootLines[idx], 32, () => {
+      idx++;
+      if (idx < bootLines.length){
+        const line = document.createElement('p');
+        line.className = 'line';
+        const isPrompt = idx % 2 === 0;
+        if (isPrompt){
+          line.innerHTML = '<span class="prompt">guest@portfolio</span><span class="colon">:</span><span class="path">~</span><span class="dollar">$</span> <span class="typed"></span><span class="cursor">▌</span>';
+        } else {
+          line.innerHTML = '<span class="typed" style="color:var(--accent)"></span>';
+        }
+        body.appendChild(line);
+        const newTyped = line.querySelector('.typed');
+        const oldCursor = typedEl.parentElement.querySelector('.cursor');
+        if (oldCursor) oldCursor.remove();
+        typedEl = newTyped;
+        step();
+      }
+    });
+  };
+  step();
+}
+document.addEventListener('DOMContentLoaded', runBoot);
+
+// ---------- Mobile nav toggle ----------
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-if (navToggle) {
+if (navToggle && navLinks){
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-expanded', isOpen);
   });
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
@@ -14,76 +68,32 @@ if (navToggle) {
   });
 }
 
-// Terminal boot sequence
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const terminalBody = document.getElementById('terminalBody');
+// ---------- Scroll reveal ----------
+const revealTargets = document.querySelectorAll(
+  '.about-grid, .skills-grid .skill-card, .log-entry, .edu-row, .cert-card, .contact-card'
+);
+revealTargets.forEach(el => el.classList.add('reveal'));
 
-const sequence = [
-  { type: 'cmd', text: 'whoami' },
-  { type: 'out', text: 'aria_chen — cybersecurity student' },
-  { type: 'cmd', text: 'cat focus.txt' },
-  { type: 'out', text: 'offensive security · digital forensics · CTF' },
-  { type: 'cmd', text: './run_portfolio.sh --live' },
-  { type: 'out', text: 'status: online — scroll to explore' }
-];
-
-function buildLine(promptShown) {
-  const p = document.createElement('p');
-  p.className = 'line';
-  if (promptShown) {
-    p.innerHTML = '<span class="prompt">guest@portfolio</span><span class="colon">:</span><span class="path">~</span><span class="dollar">$</span> ';
-  }
-  return p;
-}
-
-async function typeText(el, text, speed) {
-  for (let i = 0; i < text.length; i++) {
-    el.textContent += text[i];
-    await new Promise(r => setTimeout(r, speed));
-  }
-}
-
-async function runSequence() {
-  if (!terminalBody) return;
-  terminalBody.innerHTML = '';
-
-  if (prefersReducedMotion) {
-    sequence.forEach(step => {
-      const p = document.createElement('p');
-      if (step.type === 'cmd') {
-        p.className = 'line';
-        p.innerHTML = '<span class="prompt">guest@portfolio</span><span class="colon">:</span><span class="path">~</span><span class="dollar">$</span> ' + step.text;
-      } else {
-        p.className = 'out';
-        p.textContent = step.text;
-      }
-      terminalBody.appendChild(p);
-    });
-    return;
-  }
-
-  for (const step of sequence) {
-    if (step.type === 'cmd') {
-      const line = buildLine(true);
-      const span = document.createElement('span');
-      span.className = 'typed';
-      const cursor = document.createElement('span');
-      cursor.className = 'cursor';
-      cursor.textContent = '▌';
-      line.appendChild(span);
-      line.appendChild(cursor);
-      terminalBody.appendChild(line);
-      await typeText(span, step.text, 45);
-      cursor.remove();
-      await new Promise(r => setTimeout(r, 250));
-    } else {
-      const out = document.createElement('p');
-      out.className = 'out';
-      out.textContent = step.text;
-      terminalBody.appendChild(out);
-      await new Promise(r => setTimeout(r, 350));
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('in');
+      revealObserver.unobserve(entry.target);
     }
-  }
-}
+  });
+}, { threshold: 0.12 });
 
-runSequence();
+revealTargets.forEach(el => revealObserver.observe(el));
+
+// ---------- Skill bar fill ----------
+const skillBars = document.querySelectorAll('.skill-bar span');
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('filled');
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+skillBars.forEach(bar => skillObserver.observe(bar));
